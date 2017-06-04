@@ -38,19 +38,14 @@ public class CoinData {
         dbHelper.close();
     }
 
-    public Coin createCoin(String currency, double value) {
+    public Coin createCoin(String currency, double value, String country, Integer year,String description ) {
         ContentValues values = new ContentValues();
         Log.d("Creating", "Creating " + Double.toString(value) + " " + currency);
-
-        // Add data: Note that this method only provides title and author
-        // Must modify the method to add the full data
         values.put(MySQLiteHelper.COLUMN_CURRENCY, currency);
         values.put(MySQLiteHelper.COLUMN_VALUE, value);
-
-        // Invented data
-        values.put(MySQLiteHelper.COLUMN_COUNTRY, "Do not know");
-        values.put(MySQLiteHelper.COLUMN_YEAR, 1714);
-        values.put(MySQLiteHelper.COLUMN_DESCRIPTION, "Standard coin");
+        values.put(MySQLiteHelper.COLUMN_COUNTRY, country);
+        values.put(MySQLiteHelper.COLUMN_YEAR, year);
+        values.put(MySQLiteHelper.COLUMN_DESCRIPTION, description);
 
         // Actual insertion of the data using the values variable
         long insertId = database.insert(MySQLiteHelper.TABLE_COINS, null,

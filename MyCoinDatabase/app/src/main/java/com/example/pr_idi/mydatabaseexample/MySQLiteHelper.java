@@ -50,5 +50,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_COINS);
         onCreate(db);
     }
+    /* AIXO SEMBLA QUE ES FARA AMB LA CLASE COINDATA
+    public void addCoin(SQLiteDatabase db, Coin coin){
+        db.execSQL("INSERT INTO " + TABLE_COINS + "(" + COLUMN_CURRENCY+ ","+ COLUMN_VALUE + ","+ COLUMN_YEAR + ","+ COLUMN_COUNTRY + ","+ COLUMN_DESCRIPTION + ")"
+            + "VALUES (" + coin.getId() + ", " + coin.getCurrency() + ", "+ coin.getValue() + ", "+ coin.getYear() + ", "+ coin.getCountry() + ", "+ coin.getDescription() + ")"
+        );
+    }*/
 
 }
