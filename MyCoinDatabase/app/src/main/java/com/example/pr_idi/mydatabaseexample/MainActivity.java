@@ -38,6 +38,9 @@ public class MainActivity extends ListActivity {
     public void onClick(View view) {
         @SuppressWarnings("unchecked")
         ArrayAdapter<Coin> adapter = (ArrayAdapter<Coin>) getListAdapter();
+        for(Coin coin : coinData.getAllCoins()){
+            adapter.add(coin);
+        }
         Coin coin;
         switch (view.getId()) {
             case R.id.add:
@@ -60,13 +63,19 @@ public class MainActivity extends ListActivity {
                 // After I get the book data, I add it to the adapter
                 adapter.add(coin);*/
                 break;
-            case R.id.delete:
+            case R.id.delete:/*
                 if (getListAdapter().getCount() > 0) {
                     coin = (Coin) getListAdapter().getItem(0);
                     coinData.deleteCoin(coin);
                     adapter.remove(coin);
                 }
+                */
                 break;
+
+
+        }
+        for(Coin coin2 : coinData.getAllCoins()){
+            adapter.add(coin2);
         }
         adapter.notifyDataSetChanged();
     }
